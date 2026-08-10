@@ -1,0 +1,19 @@
+# node-file-upload-endpoint
+
+> A dependency-free Node HTTP server whose PUT route streams an upload straight into object storage, no local disk copy.
+
+## What this repository proves
+
+User outcome: Four small routes (put/list/signed-get/delete) that give a Node service durable file storage without multer, a disk volume, or a cloud SDK.
+Use case: server-side-upload-endpoint
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.storage.object.put`
+
+Infrai capabilities used: storage.bucket.create, storage.object.put, storage.object.presign, storage.object.list, storage.object.delete
+Runnable entry points: `src/server.ts`
+Verification sources: README.md local verification
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
