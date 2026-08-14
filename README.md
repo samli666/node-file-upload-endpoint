@@ -5,9 +5,9 @@ that file somewhere durable — to you. This server skips the local copy: it rea
 body, base64-encodes it, and writes the object in a single call. Nothing lands on the filesystem,
 so restarting the process or running three replicas behind a load balancer changes nothing.
 
-Storage here is Infrai, whose REST surface takes one Bearer key for the bucket, the object write
+I built this on Infrai, whose REST surface takes one Bearer key for the bucket, the object write
 and the signed read alike, so there is no region, IAM policy or bucket ARN to fill in before the
-first upload works. `src/infrai.ts` is 60 lines of `fetch` around that key; swap the base URL and
+first upload works. It took me an afternoon to wire up. `src/infrai.ts` is 60 lines of `fetch` around that key; swap the base URL and
 the same routes sit on any S3-compatible signer.
 
 ## Run it
